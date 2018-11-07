@@ -36,11 +36,12 @@ public class RelEngPerspective implements IPerspectiveFactory {
 		IFolderLayout topLeft =
 			factory.createFolder(
 				"topLeft", //NON-NLS-1
-				IPageLayout.LEFT,
-				0.25f,
+				IPageLayout.RIGHT,
+				0.5f,
 				factory.getEditorArea());
 		topLeft.addView(IPageLayout.ID_PROJECT_EXPLORER);
-		topLeft.addView("org.eclipse.jdt.junit.ResultView"); //NON-NLS-1
+		//topLeft.addView("org.eclipse.jdt.junit.ResultView"); //NON-NLS-1
+		topLeft.addView("org.eastwellext.calabash.eclipse.ui.views.calabashview");
 		
 		IFolderLayout bottomLeft =
 				factory.createFolder(
@@ -60,6 +61,7 @@ public class RelEngPerspective implements IPerspectiveFactory {
 		bottom.addView(IPageLayout.ID_PROBLEM_VIEW);
 		bottom.addView("org.eclipse.team.ui.GenericHistoryView"); //NON-NLS-1
 		bottom.addPlaceholder(IConsoleConstants.ID_CONSOLE_VIEW);
+		bottom.addView("org.eastwellext.calabash.eclipse.ui.views.SampleView");
 	}
 
 	private void addActionSets() {

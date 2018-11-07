@@ -153,8 +153,8 @@
             <command
                   id="org.eastwellext.calabash.eclipse.ui.toolbars.sampleCommand"
                   commandId="org.eastwellext.calabash.eclipse.ui.commands.sampleCommand"
-                  icon="icons/sample.png"
-                  tooltip="Say hello world">
+                  icon="icons/calabash_prj.png"
+                  tooltip="Say calabash world">
             </command>
          </toolbar>
       </menuContribution>
@@ -185,8 +185,16 @@
       <view
             id="org.eastwellext.calabash.eclipse.ui.views.SampleView"
             name="Sample View"
-            icon="icons/sample.png"
+            icon="icons/calabash_prj.png"
             class="org.eastwellext.calabash.eclipse.ui.views.SampleView"
+            category="org.eastwellext.calabash.eclipse.ui"
+            inject="true">
+      </view>
+      <view
+            id="org.eastwellext.calabash.eclipse.ui.views.calabashview"
+            name="Calabash View"
+            icon="icons/calabash_prj.png"
+            class="org.eastwellext.calabash.eclipse.ui.views.CalabashExplorer"
             category="org.eastwellext.calabash.eclipse.ui"
             inject="true">
       </view>
@@ -227,7 +235,7 @@
                id="com.example.test"
                relative="org.eclipse.ui.navigator.ProjectExplorer"
                relationship="stack"
-               ratio="0.5">
+               ratio="10">
          </view>
       </perspectiveExtension>
       <perspectiveExtension
@@ -235,7 +243,7 @@
          <view
                id="org.eastwellext.calabash.eclipse.ui.views.SampleView"
                relative="org.eclipse.ui.views.ProblemView"
-               relationship="right"
+               relationship="stack"
                ratio="0.5">
          </view>
       </perspectiveExtension>
@@ -426,9 +434,9 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             id="org.eastwellext.calabash.eclipse.ui.perspectives.RelEngPerspective"
-            name="Release Engineering"
+            name="Calabash Prj"
             class="org.eastwellext.calabash.eclipse.ui.perspectives.RelEngPerspective"
-            icon="icons/releng_gears.gif">
+            icon="icons/calabash_prj.png">
       </perspective>
    </extension>
    <extension
